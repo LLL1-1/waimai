@@ -94,8 +94,12 @@ async function loadMenu(categoryId) {
         if (state.shopStatus !== 1) return toast('店铺已打烊');
         try {
             if (state.type === 1) {
-                const flavor = prompt('口味（可留空）', '') || null;
-                await API.post('/user/shoppingCart/add', {dishId: Number(btn.dataset.id), dishFlavor: flavor});
+                const flavor = prompt('口味（可留空）', '');
+                if (flavor === null) return;
+                await API.post('/user/shoppingCart/add', {
+                    dishId: Number(btn.dataset.id),
+                    dishFlavor: flavor.trim() || null
+                });
             } else {
                 await API.post('/user/shoppingCart/add', {setmealId: Number(btn.dataset.id)});
             }

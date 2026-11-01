@@ -1,4 +1,4 @@
--- 苍穹外卖最小种子数据
+-- 外卖点餐平台最小种子数据
 -- 依赖：先执行 sky_take_out.sql 建库建表
 
 USE sky_take_out;

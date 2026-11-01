@@ -1,4 +1,4 @@
-# 苍穹外卖（CangQiongWM）
+# 外卖点餐平台（双端）
 
 ![Java](https://img.shields.io/badge/Java-25-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.1-brightgreen)
@@ -6,14 +6,14 @@
 ![MySQL](https://img.shields.io/badge/MySQL-9.x-4479A1)
 ![Redis](https://img.shields.io/badge/Redis-Memurai%208.2-DC382D)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
-[![Maven Build](https://github.com/LLL1-1/CangQiongWM/actions/workflows/maven.yml/badge.svg)](https://github.com/LLL1-1/CangQiongWM/actions/workflows/maven.yml)
+[![Maven Build](https://github.com/LLL1-1/waimai/actions/workflows/maven.yml/badge.svg)](https://github.com/LLL1-1/waimai/actions/workflows/maven.yml)
 
-按苍穹外卖的功能与结构实现，技术栈为 **Spring Boot 4.1.1 + JDK 25 + MyBatis-Plus**。
+一个前后端分离的外卖点餐平台，包含管理端和用户端。功能参考常见外卖业务，代码为独立实现，技术栈为 **Spring Boot 4.1.1 + JDK 25 + MyBatis-Plus**。
 
 ## 目录结构
 
 ```text
-CangQiongWM/
+waimai/
 ├── Code/
 │   ├── backend/                 # 后端父工程（Maven，artifactId=sky-take-out）
 │   │   ├── pom.xml

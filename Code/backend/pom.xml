@@ -16,7 +16,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>sky-take-out</name>
-    <description>苍穹外卖</description>
+    <description>外卖点餐平台（双端）</description>
 
     <modules>
         <module>sky-common</module>
