@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苍穹外卖 - 用户端</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="topbar">
+    <div class="brand">苍穹外卖</div>
+    <div id="shopStatus" class="shop-status">营业中</div>
+    <div class="user-box">
+        <span id="userName"></span>
+        <button id="logoutBtn" class="link hidden">退出</button>
+    </div>
+</header>
+
+<main>
+    <section id="loginPanel" class="login-panel">
+        <h2>用户登录</h2>
+        <p class="hint">微信登录先用 mock code，填任意字符串即可。</p>
+        <input id="loginCode" value="test_user_001" placeholder="mock code">
+        <button id="loginBtn" class="primary">登录</button>
+        <div id="loginError" class="error"></div>
+    </section>
+
+    <section id="mainPanel" class="hidden">
+        <nav class="tabs">
+            <button data-tab="menu" class="active">点餐</button>
+            <button data-tab="cart">购物车 <span id="cartCount">0</span></button>
+            <button data-tab="order">订单</button>
+            <button data-tab="address">地址</button>
+        </nav>
+
+        <section id="tab-menu" class="tab-panel">
+            <div class="menu-switch">
+                <button id="dishTypeBtn" class="primary">菜品</button>
+                <button id="setmealTypeBtn">套餐</button>
+            </div>
+            <div id="categoryList" class="chips"></div>
+            <div id="menuList" class="cards"></div>
+        </section>
+
+        <section id="tab-cart" class="tab-panel hidden">
+            <div id="cartList"></div>
+            <div class="cart-footer">
+                <strong>合计：<span id="cartTotal">¥0.00</span></strong>
+                <button id="cleanCartBtn" class="link">清空</button>
+                <button id="submitOrderBtn" class="primary">提交订单</button>
+            </div>
+        </section>
+
+        <section id="tab-order" class="tab-panel hidden">
+            <div id="orderList"></div>
+        </section>
+
+        <section id="tab-address" class="tab-panel hidden">
+            <div class="address-form">
+                <input id="consignee" placeholder="收货人">
+                <input id="phone" placeholder="手机号">
+                <input id="provinceName" placeholder="省">
+                <input id="cityName" placeholder="市">
+                <input id="districtName" placeholder="区">
+                <input id="detail" placeholder="详细地址">
+                <label class="check"><input id="isDefault" type="checkbox"> 设为默认</label>
+                <button id="saveAddressBtn" class="primary">新增地址</button>
+            </div>
+            <div id="addressList"></div>
+        </section>
+    </section>
+</main>
+
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

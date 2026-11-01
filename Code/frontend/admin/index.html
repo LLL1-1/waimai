@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苍穹外卖管理端</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="layout">
+    <aside class="sidebar">
+        <div class="brand">苍穹外卖</div>
+        <nav id="nav">
+            <button class="nav-item active" data-tab="category">分类管理</button>
+            <button class="nav-item" data-tab="employee">员工管理</button>
+            <button class="nav-item" data-tab="dish">菜品管理</button>
+            <button class="nav-item" data-tab="setmeal">套餐管理</button>
+            <button class="nav-item" data-tab="order">订单管理</button>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div id="pageTitle">分类管理</div>
+            <div class="topbar-right">
+                <span id="shopStatus" class="badge on">营业中</span>
+                <button id="shopToggle" class="btn ghost" data-status="1">打烊</button>
+                <span id="userName"></span>
+                <button id="logoutBtn" class="btn ghost">退出</button>
+            </div>
+        </header>
+
+        <!-- 分类 -->
+        <section id="panel-category" class="panel">
+            <div class="toolbar">
+                <div class="filters">
+                    <input id="categoryName" placeholder="分类名称">
+                    <select id="categoryType">
+                        <option value="">全部类型</option>
+                        <option value="1">菜品分类</option>
+                        <option value="2">套餐分类</option>
+                    </select>
+                    <button id="categorySearch" class="btn">查询</button>
+                </div>
+                <button id="categoryAdd" class="btn primary">新增分类</button>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>排序</th>
+                        <th>状态</th>
+                        <th>更新时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="categoryBody"></tbody>
+                </table>
+            </div>
+            <div id="categoryPager" class="pager"></div>
+        </section>
+
+        <!-- 员工 -->
+        <section id="panel-employee" class="panel hidden">
+            <div class="toolbar">
+                <div class="filters">
+                    <input id="employeeName" placeholder="员工姓名">
+                    <button id="employeeSearch" class="btn">查询</button>
+                </div>
+                <button id="employeeAdd" class="btn primary">新增员工</button>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>用户名</th>
+                        <th>姓名</th>
+                        <th>手机号</th>
+                        <th>性别</th>
+                        <th>状态</th>
+                        <th>更新时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="employeeBody"></tbody>
+                </table>
+            </div>
+            <div id="employeePager" class="pager"></div>
+        </section>
+
+        <!-- 菜品 -->
+        <section id="panel-dish" class="panel hidden">
+            <div class="toolbar">
+                <div class="filters">
+                    <input id="dishName" placeholder="菜品名称">
+                    <select id="dishCategory"></select>
+                    <select id="dishStatus">
+                        <option value="">全部状态</option>
+                        <option value="1">起售</option>
+                        <option value="0">停售</option>
+                    </select>
+                    <button id="dishSearch" class="btn">查询</button>
+                </div>
+                <button id="dishAdd" class="btn primary">新增菜品</button>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>图片</th>
+                        <th>名称</th>
+                        <th>分类</th>
+                        <th>价格</th>
+                        <th>状态</th>
+                        <th>更新时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="dishBody"></tbody>
+                </table>
+            </div>
+            <div id="dishPager" class="pager"></div>
+        </section>
+
+        <!-- 套餐 -->
+        <section id="panel-setmeal" class="panel hidden">
+            <div class="toolbar">
+                <div class="filters">
+                    <input id="setmealName" placeholder="套餐名称">
+                    <select id="setmealCategory"></select>
+                    <select id="setmealStatus">
+                        <option value="">全部状态</option>
+                        <option value="1">起售</option>
+                        <option value="0">停售</option>
+                    </select>
+                    <button id="setmealSearch" class="btn">查询</button>
+                </div>
+                <button id="setmealAdd" class="btn primary">新增套餐</button>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>图片</th>
+                        <th>名称</th>
+                        <th>分类</th>
+                        <th>价格</th>
+                        <th>状态</th>
+                        <th>更新时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="setmealBody"></tbody>
+                </table>
+            </div>
+            <div id="setmealPager" class="pager"></div>
+        </section>
+
+        <!-- 订单 -->
+        <section id="panel-order" class="panel hidden">
+            <div class="toolbar">
+                <div class="filters">
+                    <input id="orderNumber" placeholder="订单号">
+                    <select id="orderStatus">
+                        <option value="">全部状态</option>
+                        <option value="1">待付款</option>
+                        <option value="2">待接单</option>
+                        <option value="3">已接单</option>
+                        <option value="4">派送中</option>
+                        <option value="5">已完成</option>
+                        <option value="6">已取消</option>
+                    </select>
+                    <button id="orderSearch" class="btn">查询</button>
+                </div>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>订单号</th>
+                        <th>状态</th>
+                        <th>金额</th>
+                        <th>收货人</th>
+                        <th>手机号</th>
+                        <th>下单时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="orderBody"></tbody>
+                </table>
+            </div>
+            <div id="orderPager" class="pager"></div>
+        </section>
+    </main>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toast" class="toast"></div>
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

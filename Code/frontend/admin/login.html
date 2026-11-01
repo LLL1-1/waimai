@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苍穹外卖管理端 - 登录</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="login-page">
+<div class="login-card">
+    <div class="login-logo">苍穹外卖</div>
+    <p class="login-sub">管理端后台</p>
+    <form id="loginForm">
+        <label>
+            用户名
+            <input name="username" value="admin" required autocomplete="username">
+        </label>
+        <label>
+            密码
+            <input name="password" type="password" value="123456" required autocomplete="current-password">
+        </label>
+        <div id="loginError" class="form-error"></div>
+        <button type="submit" class="btn primary block">登录</button>
+    </form>
+    <p class="login-tip">默认账号：admin / 123456</p>
+</div>
+<script src="js/api.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
