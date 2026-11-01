@@ -6,6 +6,7 @@
 ![MySQL](https://img.shields.io/badge/MySQL-9.x-4479A1)
 ![Redis](https://img.shields.io/badge/Redis-Memurai%208.2-DC382D)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
+[![Maven Build](https://github.com/LLL1-1/CangQiongWM/actions/workflows/maven.yml/badge.svg)](https://github.com/LLL1-1/CangQiongWM/actions/workflows/maven.yml)
 
 按苍穹外卖的功能与结构实现，技术栈为 **Spring Boot 4.1.1 + JDK 25 + MyBatis-Plus**。
 
@@ -155,6 +156,7 @@ Nginx 配置在 [Code/frontend/nginx.conf](Code/frontend/nginx.conf)，Nginx 二
 - 复制 `.env.example` 作为变量清单，在 IDEA Run Configuration 或系统环境变量里设置 `MYSQL_PASSWORD`；Spring Boot 不会自动读取 `.env` 文件。
 - Nginx 配置已改为相对路径，需把 Nginx 1.20.2 解压到 `Code/frontend/nginx-1.20.2` 后运行 `start-nginx.bat`。
 - 项目使用 MIT License，见 [LICENSE](LICENSE)。
+- GitHub Actions 只做 Maven 编译检查，不启动数据库。
 
 ## 约定
 
